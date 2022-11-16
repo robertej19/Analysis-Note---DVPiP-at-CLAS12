@@ -1,0 +1,104 @@
+\documentclass[11pt]{report}
+\usepackage{outline}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{wrapfig}
+\usepackage[most]{tcolorbox}
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+%\usepackage{fancyhdr}
+\usepackage{subcaption}
+\usepackage{apacite}
+\bibliographystyle{apacite}
+\usepackage[toc,page]{appendix}
+\usepackage{grffile}
+\newcommand{\Lumi}{ \mathcal{L}}
+
+
+\title{Analysis Note on the Deeply Virtual Neutral Pion Production Cross Section Measurement}
+
+
+\author{Robert Johnston$^1$ \and Sangbaek Lee$^1$
+\and Igor Korover$^1$
+\and Xiaqing Li$^1$
+\and Andrey Kim$^2$
+}
+\date{%
+    $^1$Massachusetts Institute of Technology\\%
+    $^2$University of Connecticut\\[2ex]%
+    \today
+}
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\cleardoublepage
+% \phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\chapter{Collaborator's Note: Differences Between This and Prior Analysis Note}
+For ease of reading by collaborators, here are a listing of differences between this analysis note (for Fall 2022 DNP meeting) and the most recently collaboration approved analysis note (for April 2022 APS meeting):
+\begin{itemize}
+    \item \textbf{Model Comparison} The large reported change from analysis notes is the inclusion of the Goloskov Kroll Model to compare the preliminary CLAS12 cross section to a theoretical model. This is covered in section \ref{chap:GKmodel}.
+    \item \textbf{Exclusivity Cuts and Results} There are small improvements to this text for a more complete description of work accomplished.
+\end{itemize}
+
+\chapter{PID}
+\input{PID}
+
+\chapter{Exclusive Selection}  
+\label{chap:exclusive}
+\input{Exclusive}
+
+\chapter{Simulations}
+\label{chap:acc}
+\input{Simulations}
+
+\chapter{Luminosity and Virtual Photon Flux Factor}
+\label{chap:lumi}
+\input{Luminosity}
+
+\chapter{Results}
+\input{Results}
+
+\chapter{Comparison with Model} 
+\label{chap:GKmodel}
+\input{model}
+
+
+\chapter{Acknowledgements}
+Acknowledgement should be given to the MIT Milner Hadronic Physics group: Richard Milner, Douglas Hasell, Igor Korover, Xiaqing Li, Patrick Moran, Sangbaek Lee, and Robert Johnston. This work was also facilitated by the use of OSG and MIT Tier 2 computing, so we would like to thank Maurizio Ungaro, Christoph Paus, Ernie Ihloff, Jim Kelsey, and others for their technical support. 
+
+\include{biblio}
+
+\chapter{Appendix}
+
+\iffalse
+
+From paper on understanding pi+ production, we have:
+
+ \begin{equation}\label{xsec}
+     \frac{d^4\sigma_{\gamma^*p \rightarrow p'\pi^0}}{dQ^2W^2dtd\phi_{\pi}} =
+     \frac{\alpha (W^2-m^2)}{16\pi^2 E^2_L m^2 Q^2 (1-\epsilon)}
+     ((\frac{d\sigma_T}{dt}+\epsilon\frac{d\sigma_L}{dt})+
+     \epsilon cos(2\phi) \frac{d\sigma_{TT}}{dt} + \sqrt{2\epsilon(1+\epsilon)}cos(\phi)\frac{d\sigma_{LT}}{dt})
+\end{equation}
+
+Comparing the two, we have a difference in the prefactor of:
+
+
+
+0.3894 * 1E6 * $\frac{1}{16\pi(W^2-m_p^2)\sqrt{W^4 + (Q^2)^2+m_p^4+2W^2Q^2-2W^2m_p^2+2Q^2m_p^2}}$
+\fi
+
+\input{Appendix}
+
+
+\end{document}
